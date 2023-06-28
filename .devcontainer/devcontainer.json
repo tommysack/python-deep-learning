@@ -1,0 +1,17 @@
+{
+	"name": "DL-py",
+	"image": "tommasosacramone/dl-py",
+	"workspaceFolder": "/home/DL-py",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/home/DL-py,type=bind,consistency=delegated",	
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-toolsai.jupyter"
+			]
+		}
+	},
+}
