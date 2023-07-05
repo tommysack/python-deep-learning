@@ -75,11 +75,6 @@ Y_test_predicted = model.predict(
 )
 Y_test_predicted[1] #array([3.2925278e-27, 1.5366599e-15, 9.9999994e-01, 6.9738913e-14,2.8905640e-36, 7.7120151e-27, 3.7774132e-17, 1.9843037e-23,1.1103685e-27, 0.0000000e+00])
 
-#model.layers
-#model.weights
-#model.get_config()
-#layer_input = model.get_layer('input')
-
 #Save model to a file
 model.save_weights(
   filepath='model/sequential',

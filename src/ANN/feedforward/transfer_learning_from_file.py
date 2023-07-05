@@ -7,19 +7,19 @@ import matplotlib.pyplot as plt
 #Load data
 (X_train, Y_train), (X_test, Y_test) = keras.datasets.mnist.load_data()
 
-#Load weights (then learning) from model of sequential_1 saved to new model
+#It's important that the dimensions of the weight tensors are consistent across the layers of the models
 model = keras.Sequential()
 model.add(keras.layers.Flatten(input_shape=(28,28,1), name='input')) 
 model.add(keras.layers.Dense(100, activation='relu', name='dense')) 
 model.add(keras.layers.Dropout(0.5, name='drop')) 
 model.add(keras.layers.Dense(10, activation='softmax', name='output')) 
 
-#Load weights 
+#Load weights (then learning) from model of sequential saved to new model
 model.load_weights(
   filepath='model/sequential'
 )
 
-#Now we decide to re-train only the last two layers
+#Now we decide to re-train only the last one layers
 for layer in model.layers[:-1]:
   layer.trainable = False
 
