@@ -43,10 +43,10 @@ It reduces the number of params to be learned because it shares weights across d
 
 model = keras.Sequential()
 model.add(keras.layers.Conv2D(8, 3, input_shape=(28, 28, 1), padding='same')) #To extract information from different areas of the images: 8 filters of size 3x3
-model.add(keras.layers.MaxPool2D()) #To gradually sacrifice spatial information in favor of a progressively more abstract encoding of the images
+model.add(keras.layers.MaxPool2D()) #To gradually sacrifice spatial information for a progressively more abstract encoding of the images
 model.add(keras.layers.Conv2D(4, 3, input_shape=(28, 28, 1), padding='same')) #To extract information from different areas of the images: 4 filters of size 3x3
-model.add(keras.layers.MaxPool2D()) #To gradually sacrifice spatial information in favor of a progressively more abstract encoding of the images
-model.add(keras.layers.Flatten()) #To flat from "cubes" of numbers 
+model.add(keras.layers.MaxPool2D()) #To gradually sacrifice spatial information for a progressively more abstract encoding of the images
+model.add(keras.layers.Flatten()) #To flat from multidimensional matrices of numbers 
 model.add(keras.layers.Dense(10, activation='softmax')) #Output layer: 10 neurons whose value indicates the probability of belonging to one of the 10 classes
 
 model.compile(
@@ -66,7 +66,7 @@ report = model.fit(
 )
 
 print("\n------TESTING------")
-model.evaluate(#loss: 0.1683 - accuracy: 0.9509
+model.evaluate(# loss: 0.2919 - accuracy: 0.9322
   X_test, 
   Y_test,
   batch_size=10
