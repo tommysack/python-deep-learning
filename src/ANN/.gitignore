@@ -1,0 +1,11 @@
+#Data
+*.csv
+
+model/*
+
+# Compiled Python bytecode
+*.py[cod]
+
+# Log files
+*.log
+
