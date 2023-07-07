@@ -9,9 +9,10 @@ import matplotlib.pyplot as plt
 
 #General info training features
 X_train.shape #(60000, 28, 28) three-dimensional matrix 28x28 (one training image) x 60000 (training images)
-np.unique(Y_train) #0..255
+np.amin(X_train) #0
+np.amax(X_train) #255
 
-#General info training output
+#General info training target
 Y_train.shape #(60000,)
 np.unique(Y_train) #array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], dtype=uint8) => multi-class classification
 
@@ -20,7 +21,7 @@ X_test.shape #(10000, 28, 28) three-dimensional matrix 28x28 (one testing image)
 Y_test.shape #(10000,)
 
 #Draw first image and label
-plt.imshow(X_train[0], cmap='gray') #two-dimensional matrix 28x28
+plt.imshow(X_train[0], cmap='gray') 
 title = "Label = " + str(Y_train[0])
 plt.title(title)
 plt.show()
@@ -31,7 +32,7 @@ Note: if I had an rgb image each pixel would have been represented by an array o
 '''
 
 '''
-Sequential is a plain stack of layers, every layer has 1 input tensor and 1 output tensor
+Sequential is a plain stack of layers (ANN feedforward), every layer has 1 input tensor and 1 output tensor
 
 ReLU activation function: returns input value, or 0 if the input is <= 0
 Softmax activation function: to normalize the output to a probability distribution 
