@@ -1,0 +1,13 @@
+#Data
+*.csv
+
+images/*
+
+model/*
+
+# Compiled Python bytecode
+*.py[cod]
+
+# Log files
+*.log
+

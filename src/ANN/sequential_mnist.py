@@ -39,10 +39,16 @@ Softmax activation function: to normalize the output to a probability distributi
 '''
 
 model = keras.Sequential()
-model.add(keras.layers.Flatten(input_shape=(28,28,1), name='input')) #Input layer: to flatten from 28x28 to 784 (ANN requirement)
-model.add(keras.layers.Dense(100, activation='relu', name='dense')) #Inner layer: to densely connect the previous state to this one
-model.add(keras.layers.Dropout(0.5, name='drop')) #Inner layer: to prevent overfitting by turn off half of the neurons in the previous layer
-model.add(keras.layers.Dense(10, activation='softmax', name='output')) #Output layer: 10 neurons whose value indicates the probability of belonging to one of the 10 classes
+
+# Input layer
+model.add(keras.layers.Flatten(input_shape=(28,28,1), name='input')) #To flatten from 28x28 to 784 (ANN requirement)
+
+# Midden layers
+model.add(keras.layers.Dense(100, activation='relu', name='dense')) #To densely connect the previous state to this one
+model.add(keras.layers.Dropout(0.5, name='drop')) #To prevent overfitting by turn off half of the neurons in the previous layer
+
+# Output layer
+model.add(keras.layers.Dense(10, activation='softmax', name='output')) #10 neurons whose value indicates the probability of belonging to one of the 10 classes
 
 model.compile(
   loss = 'sparse_categorical_crossentropy', #which metric to use to optimally minimize the error
